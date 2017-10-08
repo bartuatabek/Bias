@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1400.0" style="-fx-background-color: black;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.DashboardController">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="110.0" style="-fx-background-color: #262626;">
+         <children>
+            <Circle fx:id="profileButton" layoutX="55.0" layoutY="83.0" onMouseClicked="#handleMenuAction" radius="45.0" stroke="#007aff" strokeType="INSIDE" strokeWidth="1.5">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" cycleMethod="REPEAT" proportional="false" radius="0.6309523809523809">
+                     <stops>
+                        <Stop color="#838383" />
+                        <Stop color="BLACK" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+            <ImageView fx:id="homeButton" fitHeight="100.0" fitWidth="90.0" layoutX="10.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Dashboard%20Icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="calendarButton" fitHeight="90.0" fitWidth="80.0" layoutX="15.0" layoutY="323.0" onMouseClicked="#handleMenuAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Calendar%20Icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="lectureButton" fitHeight="90.0" fitWidth="80.0" layoutX="15.0" layoutY="499.0" onMouseClicked="#handleMenuAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Lectures%20Icon.png" />
+               </image>
+            </ImageView>
+            <Line endY="700.0" layoutX="110.0" stroke="WHITE" />
+         </children>
+      </Pane>
+      <Pane layoutX="110.0" onMouseMoved="#saveQP" prefHeight="700.0" prefWidth="400.0" style="-fx-background-color: black;">
+         <children>
+            <VBox layoutX="25.0" layoutY="91.0" prefHeight="352.0" prefWidth="360.0" spacing="5.0" style="-fx-background-color: black;">
+               <children>
+                  <Pane fx:id="todayPane1" onMouseEntered="#peekEventInfo" prefHeight="39.0" prefWidth="360.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #262626;">
+                     <children>
+                        <Group layoutX="5.0" layoutY="1.0">
+                           <children>
+                              <Label focusTraversable="false" prefHeight="17.0" text="8:40 AM" textFill="#ff3b30">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label focusTraversable="false" layoutY="20.0" prefHeight="17.0" text="9:30 AM" textFill="#ff3b30">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                        <Label fx:id="lectureName1" focusTraversable="false" layoutX="56.0" layoutY="11.0" prefHeight="17.0" prefWidth="120.0" text="Lecture Name" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font></Label>
+                        <Label fx:id="room1" focusTraversable="false" layoutX="192.0" layoutY="11.0" prefHeight="17.0" prefWidth="80.0" text="Room" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font></Label>
+                        <JFXButton fx:id="q1" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="286.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="Q" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="p1" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="322.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="P" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="todayPane2" layoutX="10.0" layoutY="10.0" onMouseEntered="#peekEventInfo" prefHeight="39.0" prefWidth="360.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #262626;">
+                     <children>
+                        <Group layoutX="5.0" layoutY="1.0">
+                           <children>
+                              <Label focusTraversable="false" prefHeight="17.0" text="9:40 AM" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label focusTraversable="false" layoutX="-4.0" layoutY="20.0" prefHeight="17.0" text="10:30 AM" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                        <Label fx:id="lectureName2" focusTraversable="false" layoutX="56.0" layoutY="11.0" prefHeight="17.0" prefWidth="120.0" text="Lecture Name" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="room2" focusTraversable="false" layoutX="192.0" layoutY="11.0" prefHeight="17.0" prefWidth="80.0" text="Room" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="q2" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="286.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="Q" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="p2" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="322.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="P" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="todayPane3" layoutX="10.0" layoutY="54.0" onMouseEntered="#peekEventInfo" prefHeight="39.0" prefWidth="360.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #262626;">
+                     <children>
+                        <Group layoutX="5.0" layoutY="1.0">
+                           <children>
+                              <Label focusTraversable="false" layoutX="-4.0" prefHeight="17.0" text="10:40 AM" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label focusTraversable="false" layoutX="-2.0" layoutY="20.0" prefHeight="17.0" text="11:30 AM" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                        <Label fx:id="lectureName3" focusTraversable="false" layoutX="56.0" layoutY="11.0" prefHeight="17.0" prefWidth="120.0" text="Lecture Name" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="room3" focusTraversable="false" layoutX="192.0" layoutY="11.0" prefHeight="17.0" prefWidth="80.0" text="Room" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="q3" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="286.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="Q" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="p3" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="322.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="P" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="todayPane4" layoutX="10.0" layoutY="98.0" onMouseEntered="#peekEventInfo" prefHeight="39.0" prefWidth="360.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #262626;">
+                     <children>
+                        <Group layoutX="5.0" layoutY="1.0">
+                           <children>
+                              <Label focusTraversable="false" layoutX="-2.0" prefHeight="17.0" text="11:40 AM" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label focusTraversable="false" layoutX="-2.0" layoutY="20.0" prefHeight="17.0" text="12:30 PM" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                        <Label fx:id="lectureName4" focusTraversable="false" layoutX="56.0" layoutY="11.0" prefHeight="17.0" prefWidth="120.0" text="Lecture Name" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="room4" focusTraversable="false" layoutX="192.0" layoutY="11.0" prefHeight="17.0" prefWidth="80.0" text="Room" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="q4" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="286.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="Q" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="p4" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="322.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="P" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="todayPane5" layoutX="10.0" layoutY="10.0" onMouseEntered="#peekEventInfo" prefHeight="39.0" prefWidth="360.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #262626;">
+                     <children>
+                        <Group layoutX="5.0" layoutY="1.0">
+                           <children>
+                              <Label focusTraversable="false" layoutX="3.0" prefHeight="17.0" text="1:40 PM" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label focusTraversable="false" layoutX="2.0" layoutY="20.0" prefHeight="17.0" text="2:30 PM" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                        <Label fx:id="lectureName5" focusTraversable="false" layoutX="56.0" layoutY="11.0" prefHeight="17.0" prefWidth="120.0" text="Lecture Name" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="room5" focusTraversable="false" layoutX="192.0" layoutY="11.0" prefHeight="17.0" prefWidth="80.0" text="Room" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="q5" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="286.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="Q" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="p5" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="322.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="P" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="todayPane6" layoutX="10.0" layoutY="186.0" onMouseEntered="#peekEventInfo" prefHeight="39.0" prefWidth="360.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #262626;">
+                     <children>
+                        <Group layoutX="5.0" layoutY="1.0">
+                           <children>
+                              <Label focusTraversable="false" layoutX="2.0" prefHeight="17.0" text="2:40 PM" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label focusTraversable="false" layoutX="2.0" layoutY="20.0" prefHeight="17.0" text="3:30 PM" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                        <Label fx:id="lectureName6" focusTraversable="false" layoutX="56.0" layoutY="11.0" prefHeight="17.0" prefWidth="120.0" text="Lecture Name" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="room6" focusTraversable="false" layoutX="192.0" layoutY="11.0" prefHeight="17.0" prefWidth="80.0" text="Room" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="q6" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="286.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="Q" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="p6" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="322.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="P" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="todayPane7" layoutX="10.0" layoutY="230.0" onMouseEntered="#peekEventInfo" prefHeight="39.0" prefWidth="360.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #262626;">
+                     <children>
+                        <Group layoutX="5.0" layoutY="1.0">
+                           <children>
+                              <Label focusTraversable="false" layoutX="2.0" prefHeight="17.0" text="3:40 PM" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label focusTraversable="false" layoutX="2.0" layoutY="20.0" prefHeight="17.0" text="4:30 PM" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                        <Label fx:id="lectureName7" focusTraversable="false" layoutX="56.0" layoutY="11.0" prefHeight="17.0" prefWidth="120.0" text="Lecture Name" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="room7" focusTraversable="false" layoutX="192.0" layoutY="11.0" prefHeight="17.0" prefWidth="80.0" text="Room" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="q7" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="286.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="Q" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="p7" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="322.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="P" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="todayPane8" layoutX="10.0" layoutY="274.0" onMouseEntered="#peekEventInfo" prefHeight="39.0" prefWidth="360.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-background-color: #262626;">
+                     <children>
+                        <Group layoutX="5.0" layoutY="1.0">
+                           <children>
+                              <Label focusTraversable="false" layoutX="2.0" prefHeight="17.0" text="4:40 PM" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label focusTraversable="false" layoutX="2.0" layoutY="20.0" prefHeight="17.0" text="5:30 PM" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Text Regular" size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                        <Label fx:id="lectureName8" focusTraversable="false" layoutX="56.0" layoutY="11.0" prefHeight="17.0" prefWidth="120.0" text="Lecture Name" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="room8" focusTraversable="false" layoutX="192.0" layoutY="11.0" prefHeight="17.0" prefWidth="80.0" text="Room" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="q8" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="286.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="Q" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="p8" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="322.0" layoutY="5.0" minHeight="30.0" minWidth="30.0" onAction="#addQP" ripplerFill="BLACK" style="-fx-background-color: #262626; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100;" text="P" textAlignment="CENTER" textFill="#ff3b30">
+                           <font>
+                              <Font name="SF Pro Text Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <Label focusTraversable="false" layoutX="20.0" layoutY="10.0" prefHeight="56.0" text="Today" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Semibold" size="50.0" />
+               </font>
+            </Label>
+            <Label focusTraversable="false" layoutX="20.0" layoutY="445.0" prefHeight="56.0" text="Activities" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Semibold" size="35.0" />
+               </font>
+            </Label>
+            <Line endX="200.0" layoutX="121.0" layoutY="72.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
+            <Line endY="56.0" layoutX="21.0" layoutY="73.0" startY="19.0" stroke="#007aff" strokeWidth="2.0" />
+            <Line endY="56.0" layoutX="21.0" layoutY="117.0" startY="19.0" stroke="#007aff" strokeWidth="2.0" />
+            <Line endY="56.0" layoutX="21.0" layoutY="161.0" startY="19.0" stroke="#007aff" strokeWidth="2.0" />
+            <Line endY="56.0" layoutX="21.0" layoutY="206.0" startY="19.0" stroke="#007aff" strokeWidth="2.0" />
+            <Line endY="56.0" layoutX="21.0" layoutY="250.0" startY="19.0" stroke="#007aff" strokeWidth="2.0" />
+            <Line endY="56.0" layoutX="21.0" layoutY="293.0" startY="19.0" stroke="#007aff" strokeWidth="2.0" />
+            <Line endY="56.0" layoutX="21.0" layoutY="337.0" startY="19.0" stroke="#007aff" strokeWidth="2.0" />
+            <Line endY="56.0" layoutX="21.0" layoutY="381.0" startY="19.0" stroke="#007aff" strokeWidth="2.0" />
+            <ImageView fx:id="arrow1" fitHeight="12.0" fitWidth="13.0" layoutX="8.0" layoutY="126.0" visible="false">
+               <image>
+                  <Image url="@../resources/Time%20Arrow.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="arrow2" fitHeight="12.0" fitWidth="13.0" layoutX="8.0" layoutY="170.0" visible="false">
+               <image>
+                  <Image url="@../resources/Time%20Arrow.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="arrow3" fitHeight="12.0" fitWidth="13.0" layoutX="8.0" layoutY="215.0" visible="false">
+               <image>
+                  <Image url="@../resources/Time%20Arrow.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="arrow4" fitHeight="12.0" fitWidth="13.0" layoutX="8.0" layoutY="259.0" visible="false">
+               <image>
+                  <Image url="@../resources/Time%20Arrow.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="arrow5" fitHeight="12.0" fitWidth="13.0" layoutX="9.0" layoutY="303.0" visible="false">
+               <image>
+                  <Image url="@../resources/Time%20Arrow.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="arrow6" fitHeight="12.0" fitWidth="13.0" layoutX="9.0" layoutY="347.0" visible="false">
+               <image>
+                  <Image url="@../resources/Time%20Arrow.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="arrow7" fitHeight="12.0" fitWidth="13.0" layoutX="8.0" layoutY="391.0" visible="false">
+               <image>
+                  <Image url="@../resources/Time%20Arrow.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="arrow8" fitHeight="12.0" fitWidth="13.0" layoutX="8.0" layoutY="435.0" visible="false">
+               <image>
+                  <Image url="@../resources/Time%20Arrow.png" />
+               </image>
+            </ImageView>
+            <Line endY="37.0" layoutX="21.0" layoutY="512.0" stroke="#4cd964" strokeWidth="2.0" />
+            <Line endY="37.0" layoutX="21.0" layoutY="556.0" stroke="#4cd964" strokeWidth="2.0" />
+            <Line endY="37.0" layoutX="21.0" layoutY="600.0" stroke="#4cd964" strokeWidth="2.0" />
+            <Line endY="37.0" layoutX="21.0" layoutY="644.0" stroke="#4cd964" strokeWidth="2.0" />
+            <ScrollPane fx:id="activityScroller" fitToWidth="true" hbarPolicy="NEVER" layoutX="24.0" layoutY="510.0" pannable="true" prefHeight="173.0" prefWidth="374.0" style="-fx-background-color: black;" stylesheets="@application.css" vbarPolicy="NEVER">
+               <content>
+                  <VBox fx:id="activities" fillWidth="false" minHeight="171.0" prefWidth="360.0" spacing="5.0" style="-fx-background-color: black;" />
+               </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+      <Pane layoutX="513.0" onMouseMoved="#serializeLectureInfos" prefHeight="700.0" prefWidth="450.0" style="-fx-background-color: black;">
+         <children>
+            <Label focusTraversable="false" layoutX="25.0" layoutY="10.0" prefHeight="61.0" text="Assignments" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Semibold" size="50.0" />
+               </font>
+            </Label>
+            <Line endX="200.0" layoutX="126.0" layoutY="72.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
+            <ScrollPane hbarPolicy="NEVER" layoutX="25.0" layoutY="90.0" prefHeight="555.0" prefWidth="410.0" style="-fx-background-color: black;" stylesheets="@application.css" vbarPolicy="NEVER">
+               <content>
+                  <VBox fx:id="assBox" alignment="TOP_CENTER" prefHeight="553.0" prefWidth="408.0" spacing="10.0" style="-fx-background-color: black;" />
+               </content>
+            </ScrollPane>
+            <JFXButton fx:id="addAss" alignment="CENTER" contentDisplay="CENTER" layoutX="201.0" layoutY="652.0" minHeight="34.0" minWidth="34.0" onAction="#newAss" ripplerFill="TRANSPARENT" style="-fx-background-color: transparent; -fx-border-color: white; -fx-background-radius: 100; -fx-border-radius: 100;" text="+" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Text Regular" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="966.0" onMouseMoved="#serializeLectureInfos" prefHeight="700.0" prefWidth="434.0" style="-fx-background-color: black;">
+         <children>
+            <Pane layoutX="24.0" layoutY="91.0" prefHeight="222.0" prefWidth="386.0" style="-fx-background-color: #151515; -fx-background-radius: 15; -fx-border-color: white; -fx-border-radius: 15;">
+               <children>
+                  <Line endX="284.0" layoutX="101.0" layoutY="22.0" startX="-100.0" stroke="WHITE" />
+                  <JFXButton fx:id="importButton" alignment="CENTER" contentDisplay="CENTER" layoutX="245.0" layoutY="183.0" minWidth="61.0" onAction="#importNote" ripplerFill="TRANSPARENT" style="-fx-background-color: #151515; -fx-border-radius: 100; -fx-border-color: white; -fx-background-radius: 100;" text="Import" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Text Regular" size="13.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="saveNote" alignment="CENTER" contentDisplay="CENTER" layoutX="315.0" layoutY="183.0" minWidth="61.0" onAction="#saveNote" ripplerFill="TRANSPARENT" style="-fx-background-color: #151515; -fx-border-radius: 100; -fx-border-color: white; -fx-background-radius: 100;" text="Save" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Text Regular" size="13.0" />
+                     </font></JFXButton>
+                  <JFXTextArea fx:id="note" focusColor="#007aff" layoutX="5.0" layoutY="23.0" prefHeight="145.0" prefWidth="376.0" stylesheets="@application.css">
+                     <font>
+                        <Font name="SF Pro Text Regular" size="13.0" />
+                     </font>
+                  </JFXTextArea>
+                  <JFXTextField fx:id="noteTitle" alignment="CENTER" focusColor="#262626" layoutX="5.0" layoutY="1.0" prefHeight="21.0" prefWidth="376.0" promptText="New Note" stylesheets="@application.css" unFocusColor="#262626">
+                     <font>
+                        <Font name="SF Pro Text Regular" size="11.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </Pane>
+            <Label focusTraversable="false" layoutX="25.0" layoutY="10.0" prefHeight="56.0" text="Notes" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Semibold" size="50.0" />
+               </font>
+            </Label>
+            <Line endX="200.0" layoutX="126.0" layoutY="72.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
+            <Label focusTraversable="false" layoutX="25.0" layoutY="375.0" text="My Notes" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Semibold" size="35.0" />
+               </font>
+            </Label>
+            <ScrollPane fx:id="noteScroller" hbarPolicy="NEVER" hmax="0.0" layoutX="24.0" layoutY="427.0" onDragDropped="#handleDrop" onDragOver="#handleDragOver" prefHeight="202.0" prefWidth="394.0" style="-fx-background-color: black;" vbarPolicy="NEVER">
+               <content>
+                  <VBox fx:id="notes" fillWidth="false" minHeight="200.0" prefWidth="392.0" spacing="5.0" style="-fx-background-color: black;" />
+               </content>
+            </ScrollPane>
+            <ImageView fx:id="move" blendMode="ADD" disable="true" fitHeight="150.0" fitWidth="200.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true" x="145.0" y="460.0">
+               <image>
+                  <Image url="@../resources/move.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="editNote" alignment="CENTER" layoutX="201.0" layoutY="652.0" minHeight="34.0" minWidth="34.0" onAction="#editNotes" ripplerFill="TRANSPARENT" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 100; -fx-background-radius: 100;" text="Edit" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Text Light" size="10.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Line endY="699.0" layoutX="515.0" stroke="WHITE" />
+      <Line endY="699.0" layoutX="965.0" stroke="WHITE" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/Activity.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/Assignment.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/AutoCompleteSearchField.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/AutoCompleteTextField.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/CalendarEvent.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/centerdevice-nsmenufx-2.1.5.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/Circular Progress Bar.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/controlsfx-8.40.13.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/CoursePane.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/EventInfo.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/GradeCell.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/jfoenix.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/NoteCell.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/poi-3.17-beta1.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/poi-ooxml-3.17-beta1.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/poi-ooxml-schemas-3.17-beta1.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/tilesfx-1.4.5.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/TrayNotification.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/UserIcon.jar"/>
+	<classpathentry kind="lib" path="/Users/bartu/Documents/workspace/lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

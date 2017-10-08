@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.ToggleSwitch?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1400.0" style="-fx-background-color: black;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProfileController">
+	<children>
+      <Pane prefHeight="700.0" prefWidth="110.0" style="-fx-background-color: #262626;">
+         <children>
+            <Circle fx:id="profileButtonP" layoutX="55.0" layoutY="83.0" radius="45.0" stroke="#007aff" strokeType="INSIDE" strokeWidth="1.5">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" cycleMethod="REPEAT" proportional="false" radius="0.6309523809523809">
+                     <stops>
+                        <Stop color="#838383" />
+                        <Stop color="BLACK" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+            <ImageView fx:id="homeButtonP" fitHeight="100.0" fitWidth="90.0" layoutX="10.0" layoutY="200.0" onMouseClicked="#handleMenuAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Dashboard%20Icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="calendarButtonP" fitHeight="90.0" fitWidth="80.0" layoutX="15.0" layoutY="323.0" onMouseClicked="#handleMenuAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Calendar%20Icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="lectureButtonP" fitHeight="90.0" fitWidth="80.0" layoutX="15.0" layoutY="499.0" onMouseClicked="#handleMenuAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Lectures%20Icon.png" />
+               </image>
+            </ImageView>
+            <Line endY="700.0" layoutX="110.0" stroke="WHITE" />
+         </children>
+      </Pane>
+		<Pane layoutX="110.0" onMouseClicked="#hideSettings" prefHeight="700.0" prefWidth="1290.0" style="-fx-background-color: black;">
+			<children>
+            <Circle fx:id="profilePic" focusTraversable="true" layoutX="266.0" layoutY="153.0" radius="100.0" stroke="#007aff" strokeType="INSIDE" strokeWidth="1.5">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" cycleMethod="REPEAT" proportional="false" radius="0.6309523809523809">
+                     <stops>
+                        <Stop color="#838383" />
+                        <Stop color="BLACK" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill></Circle>
+            <JFXTextField fx:id="name" editable="false" focusColor="BLACK" focusTraversable="false" layoutX="434.0" layoutY="88.0" maxWidth="700.0" prefHeight="100.0" promptText="Name" stylesheets="@application.css" text="Name" unFocusColor="BLACK">
+               <font>
+                  <Font name="SF Pro Display Semibold" size="80.0" />
+               </font>
+            </JFXTextField>
+				<Label layoutX="87.0" layoutY="303.0" text="Enrolled Courses" textFill="WHITE">
+					<font>
+						<Font name="SF Pro Display Semibold" size="40.0" />
+					</font>
+				</Label>
+            <GridPane alignment="CENTER" hgap="20.0" layoutX="87.0" layoutY="376.0" prefHeight="283.0" prefWidth="432.0" vgap="20.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+      				<Pane fx:id="pane1" opacity="0.25" prefHeight="72.0" prefWidth="192.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: white; -fx-border-style: segments(10, 10, 10, 10);">
+      					<children>
+      						<Label fx:id="course1" alignment="CENTER" focusTraversable="false" layoutX="29.0" layoutY="26.0" prefWidth="150.0" text="Course Name" textAlignment="CENTER" textFill="WHITE" visible="false">
+      							<font>
+      								<Font name="SF Pro Display Medium" size="25.0" />
+      							</font>
+      						</Label>
+                        <ImageView fx:id="add1" fitHeight="57.0" fitWidth="111.0" layoutX="70.0" layoutY="10.0" onMouseClicked="#popCourseMenu" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/plus.png" />
+                           </image>
+                        </ImageView>
+      					</children>
+      				</Pane>
+      				<Pane fx:id="pane2" opacity="0.25" prefHeight="72.0" prefWidth="192.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: white; -fx-border-style: segments(10, 10, 10, 10);" GridPane.columnIndex="1">
+      					<children>
+      						<Label fx:id="course2" alignment="CENTER" focusTraversable="false" layoutX="29.0" layoutY="26.0" prefWidth="150.0" text="Course Name" textFill="WHITE" visible="false">
+      							<font>
+      								<Font name="SF Pro Display Medium" size="25.0" />
+      							</font>
+      						</Label>
+                        <ImageView fx:id="add2" fitHeight="57.0" fitWidth="111.0" layoutX="70.0" layoutY="10.0" onMouseClicked="#popCourseMenu" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/plus.png" />
+                           </image>
+                        </ImageView>
+      					</children>
+      				</Pane>
+      				<Pane fx:id="pane3" opacity="0.25" prefHeight="72.0" prefWidth="192.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: white; -fx-border-style: segments(10, 10, 10, 10);" GridPane.rowIndex="1">
+      					<children>
+      						<Label fx:id="course3" alignment="CENTER" focusTraversable="false" layoutX="29.0" layoutY="26.0" prefWidth="150.0" text="Course Name" textFill="WHITE" visible="false">
+      							<font>
+      								<Font name="SF Pro Display Medium" size="25.0" />
+      							</font>
+      						</Label>
+                        <ImageView fx:id="add3" fitHeight="57.0" fitWidth="111.0" layoutX="70.0" layoutY="10.0" onMouseClicked="#popCourseMenu" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/plus.png" />
+                           </image>
+                        </ImageView>
+      					</children>
+      				</Pane>
+      				<Pane fx:id="pane4" opacity="0.25" prefHeight="72.0" prefWidth="192.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: white; -fx-border-style: segments(10, 10, 10, 10);" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      					<children>
+      						<Label fx:id="course4" alignment="CENTER" focusTraversable="false" layoutX="29.0" layoutY="26.0" prefWidth="150.0" text="Course Name" textFill="WHITE" visible="false">
+      							<font>
+      								<Font name="SF Pro Display Medium" size="25.0" />
+      							</font>
+      						</Label>
+                        <ImageView fx:id="add4" fitHeight="57.0" fitWidth="111.0" layoutX="70.0" layoutY="10.0" onMouseClicked="#popCourseMenu" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/plus.png" />
+                           </image>
+                        </ImageView>
+      					</children>
+      				</Pane>
+      				<Pane fx:id="pane5" opacity="0.25" prefHeight="72.0" prefWidth="192.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: white; -fx-border-style: segments(10, 10, 10, 10);" GridPane.rowIndex="2">
+      					<children>
+      						<Label fx:id="course5" alignment="CENTER" focusTraversable="false" layoutX="29.0" layoutY="26.0" prefWidth="150.0" text="Course Name" textFill="WHITE" visible="false">
+      							<font>
+      								<Font name="SF Pro Display Medium" size="25.0" />
+      							</font>
+      						</Label>
+                        <ImageView fx:id="add5" fitHeight="57.0" fitWidth="111.0" layoutX="70.0" layoutY="10.0" onMouseClicked="#popCourseMenu" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/plus.png" />
+                           </image>
+                        </ImageView>
+      					</children>
+      				</Pane>
+      				<Pane fx:id="pane6" opacity="0.25" prefHeight="72.0" prefWidth="192.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: white; -fx-border-style: segments(10, 10, 10, 10);" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      					<children>
+      						<Label fx:id="course6" alignment="CENTER" focusTraversable="false" layoutX="29.0" layoutY="26.0" prefWidth="150.0" text="Course Name" textFill="WHITE" visible="false">
+      							<font>
+      								<Font name="SF Pro Display Medium" size="25.0" />
+      							</font>
+      						</Label>
+                        <ImageView fx:id="add6" fitHeight="57.0" fitWidth="111.0" layoutX="70.0" layoutY="10.0" onMouseClicked="#popCourseMenu" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/plus.png" />
+                           </image>
+                        </ImageView>
+      					</children>
+      				</Pane>
+               </children>
+            </GridPane>
+            <JFXButton fx:id="remove_course_1" alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="71.0" layoutY="360.0" onAction="#removeCourse" ripplerFill="TRANSPARENT" style="-fx-background-color: black; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100; -fx-border-width: 1.5;" text="X" textAlignment="CENTER" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="SF Pro Display Medium" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="remove_course_3" alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="71.0" layoutY="461.0" onAction="#removeCourse" ripplerFill="TRANSPARENT" style="-fx-background-color: black; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100; -fx-border-width: 1.5;" text="X" textAlignment="CENTER" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="SF Pro Display Medium" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="remove_course_5" alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="71.0" layoutY="562.0" onAction="#removeCourse" ripplerFill="TRANSPARENT" style="-fx-background-color: black; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100; -fx-border-width: 1.5;" text="X" textAlignment="CENTER" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="SF Pro Display Medium" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="remove_course_2" alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="297.0" layoutY="360.0" onAction="#removeCourse" ripplerFill="TRANSPARENT" style="-fx-background-color: black; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100; -fx-border-width: 1.5;" text="X" textAlignment="CENTER" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="SF Pro Display Medium" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="remove_course_4" alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="297.0" layoutY="461.0" onAction="#removeCourse" ripplerFill="TRANSPARENT" style="-fx-background-color: black; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100; -fx-border-width: 1.5;" text="X" textAlignment="CENTER" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="SF Pro Display Medium" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="remove_course_6" alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="297.0" layoutY="562.0" onAction="#removeCourse" ripplerFill="TRANSPARENT" style="-fx-background-color: black; -fx-background-radius: 100; -fx-border-color: white; -fx-border-radius: 100; -fx-border-width: 1.5;" text="X" textAlignment="CENTER" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="SF Pro Display Medium" size="15.0" />
+               </font>
+            </JFXButton>
+				<Label layoutX="617.0" layoutY="374.0" text="Email Address" textFill="WHITE">
+					<font>
+						<Font name="SF Pro Display Semibold" size="30.0" />
+					</font>
+				</Label>
+				<Label layoutX="617.0" layoutY="437.0" text="Username" textFill="WHITE">
+					<font>
+						<Font name="SF Pro Display Semibold" size="30.0" />
+					</font>
+				</Label>
+				<Label layoutX="617.0" layoutY="501.0" text="Student ID" textFill="WHITE">
+					<font>
+						<Font name="SF Pro Display Semibold" size="30.0" />
+					</font>
+				</Label>
+				<Label layoutX="617.0" layoutY="560.0" text="Password" textFill="WHITE">
+					<font>
+						<Font name="SF Pro Display Semibold" size="30.0" />
+					</font>
+				</Label>
+				<Label fx:id="verifyLabel" layoutX="617.0" layoutY="619.0" text="Verify" textFill="WHITE" visible="false">
+					<font>
+						<Font name="SF Pro Display Semibold" size="30.0" />
+					</font>
+				</Label>
+				<JFXTextField fx:id="email" editable="false" focusColor="TRANSPARENT" labelFloat="true" layoutX="827.0" layoutY="373.0" prefHeight="37.0" prefWidth="386.0" style="-fx-background-color: transparent;" styleClass="text-input" stylesheets="@application.css" unFocusColor="WHITE">
+					<font>
+						<Font name="SF Pro Text Regular" size="15.0" />
+					</font>
+				</JFXTextField>
+				<JFXTextField fx:id="username" editable="false" focusColor="TRANSPARENT" labelFloat="true" layoutX="827.0" layoutY="435.0" prefHeight="37.0" prefWidth="386.0" style="-fx-background-color: transparent;" styleClass="text-input" stylesheets="@application.css" unFocusColor="WHITE">
+					<font>
+						<Font name="SF Pro Text Regular" size="15.0" />
+					</font>
+				</JFXTextField>
+				<JFXTextField fx:id="id" editable="false" focusColor="TRANSPARENT" labelFloat="true" layoutX="827.0" layoutY="498.0" prefHeight="37.0" prefWidth="386.0" style="-fx-background-color: transparent;" styleClass="text-input" stylesheets="@application.css" unFocusColor="WHITE">
+					<font>
+						<Font name="SF Pro Text Regular" size="15.0" />
+					</font>
+				</JFXTextField>
+            <JFXPasswordField fx:id="password" editable="false" focusColor="TRANSPARENT" layoutX="827.0" layoutY="559.0" prefHeight="37.0" prefWidth="386.0" style="-fx-background-color: transparent;" stylesheets="@application.css" unFocusColor="WHITE">
+               <font>
+                  <Font name="SF Pro Text Regular" size="15.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXPasswordField fx:id="verify" focusColor="#007bff" layoutX="827.0" layoutY="620.0" prefHeight="37.0" prefWidth="386.0" style="-fx-background-color: transparent;" stylesheets="@application.css" unFocusColor="WHITE" visible="false">
+               <font>
+                  <Font name="SF Pro Text Regular" size="15.0" />
+               </font>
+            </JFXPasswordField>
+				<JFXButton fx:id="edit" layoutX="1190.0" layoutY="20.0" minHeight="40.0" minWidth="80.0" onAction="#editAndSave" ripplerFill="BLACK" style="-fx-background-color: transparent; -fx-border-color: white; -fx-background-radius: 100; -fx-border-radius: 100;" text="Edit" textFill="WHITE">
+					<font>
+						<Font name="SF Pro Display Regular" size="15.0" />
+					</font>
+				</JFXButton>
+            <JFXButton fx:id="imageButton" layoutX="244.0" layoutY="210.0" onAction="#handlePicAction" ripplerFill="TRANSPARENT" text="edit" textAlignment="CENTER" textFill="#007aff" visible="false">
+               <font>
+                  <Font name="SF Pro Display Regular" size="15.0" />
+               </font>
+            </JFXButton>
+			</children>
+		</Pane>
+      <ImageView fx:id="settingsButton" fitHeight="50.0" fitWidth="50.0" layoutX="1350.0" layoutY="350.0" onMouseClicked="#deploy" preserveRatio="true" rotate="-90.0">
+         <image>
+            <Image url="@../resources/Arrow.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="settingsPane" prefHeight="700.0" prefWidth="400.0" style="-fx-background-color: #262626;" translateX="1400.0" visible="false">
+         <children>
+            <Label layoutX="10.0" layoutY="10.0" text="Settings" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Bold" size="36.0" />
+               </font>
+            </Label>
+            <Line endX="398.0" layoutX="1.0" layoutY="60.0" stroke="WHITE" strokeWidth="0.5" />
+            <Pane layoutX="10.0" layoutY="80.0" prefHeight="550.0" prefWidth="325.0" style="-fx-border-radius: 16;">
+               <children>
+                  <Label layoutX="10.0" text="Profile" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Display Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="28.0" text="Remember Me" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Display Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <ToggleSwitch fx:id="rememberMe" layoutX="278.0" layoutY="26.0" prefWidth="37.0" />
+                  <Line endX="305.0" layoutX="10.0" layoutY="55.0" stroke="#707070" strokeWidth="0.5" />
+                  <Label layoutX="10.0" layoutY="65.0" text="Keep Me Logged In" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Display Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <ToggleSwitch fx:id="keepMeLoggedIn" layoutX="278.0" layoutY="63.0" prefWidth="36.6" />
+                  <Line endX="305.0" layoutX="10.0" layoutY="92.0" stroke="#707070" strokeWidth="0.5" />
+                  <Label layoutX="10.0" layoutY="116.0" text="Today" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Display Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="144.0" text="Allow Notifications" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Display Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <ToggleSwitch fx:id="allowNotifications" layoutX="278.0" layoutY="142.0" prefWidth="37.0" selected="true" />
+                  <Line endX="305.0" layoutX="10.0" layoutY="171.0" stroke="#707070" strokeWidth="0.5" />
+                  <Label layoutX="10.0" layoutY="195.0" text="Assignments" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Display Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="223.0" text="Remove Past Assignments" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Display Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <ToggleSwitch fx:id="removePastAssignments" layoutX="278.0" layoutY="221.0" prefWidth="37.0" />
+                  <Line endX="305.0" layoutX="10.0" layoutY="250.0" stroke="#707070" strokeWidth="0.5" />
+                  <Label layoutX="10.0" layoutY="274.0" text="Notes" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Display Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="302.0" text="Enable Notes" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Display Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <ToggleSwitch fx:id="enableNotes" layoutX="278.0" layoutY="300.0" prefWidth="37.0" selected="true" />
+                  <Line endX="305.0" layoutX="10.0" layoutY="329.0" stroke="#707070" strokeWidth="0.5" />
+                  <Label layoutX="10.0" layoutY="339.0" text="Save Notes As Text" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Display Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <ToggleSwitch fx:id="saveNotesAsText" layoutX="278.0" layoutY="337.0" prefWidth="37.0" />
+                  <Line endX="305.0" layoutX="10.0" layoutY="366.0" stroke="#707070" strokeWidth="0.5" />
+                  <Label layoutX="10.0" layoutY="390.0" text="Courses" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Display Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="418.0" text="Enable Courses" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Display Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <ToggleSwitch fx:id="enableCourses" layoutX="278.0" layoutY="416.0" prefWidth="37.0" selected="true" />
+                  <Line endX="305.0" layoutX="10.0" layoutY="445.0" stroke="#707070" strokeWidth="0.5" />
+                  <Label layoutX="11.0" layoutY="455.0" text="Temporary Courses" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Display Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <ToggleSwitch fx:id="enableEditing" layoutX="279.0" layoutY="453.0" prefWidth="37.0" />
+                  <Line endX="305.0" layoutX="11.0" layoutY="482.0" stroke="#707070" strokeWidth="0.5" />
+                  <JFXButton fx:id="signOut" alignment="CENTER" layoutX="128.84863285" layoutY="513.0" onAction="#signOut" ripplerFill="TRANSPARENT" style="-fx-background-color: #262626; -fx-border-color: white; -fx-background-radius: 100; -fx-border-radius: 100;" text="Sign Out" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Display Regular" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <JFXButton fx:id="about" alignment="CENTER" buttonType="RAISED" layoutX="130.435058559375" layoutY="650.0" onAction="#ShowAbout" onMouseEntered="#underline" onMouseExited="#disableUnderline" ripplerFill="#26262600" text="About Bias" textFill="WHITE" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+	</children>
+</AnchorPane>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="320.0" prefWidth="580.0" style="-fx-background-color: #181818;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+   <children>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="36.0" layoutY="60.0" preserveRatio="true">
+         <image>
+            <Image url="@../resources/Bias.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="12.0" layoutY="270.0" preserveRatio="true">
+         <image>
+            <Image url="@../resources/logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="280.0" layoutY="90.0" text="Bias" textFill="WHITE">
+         <font>
+            <Font name="SF Pro Display Medium" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="280.0" layoutY="150.0" text="version 2.0 (9810)" textFill="#ceced2">
+         <font>
+            <Font name="SF Pro Display Medium" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="280.0" layoutY="240.0" prefWidth="290.0" text="© 2017-2018 Infinity Group Inc. All rights reserved. Infinity Group, the Infinity Group logo, and Bias are trademarks of Infinity Group Inc.., registerd in the U.S. and other countries." textFill="#ceced2" wrapText="true">
+         <font>
+            <Font name="SF Pro Display Medium" size="10.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

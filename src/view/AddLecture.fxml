@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import model.AutocompletionlTextField?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: black; -fx-background-radius: 10; -fx-border-color: #262626; -fx-border-radius: 10;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AddLectureController">
+   <children>
+      <ImageView fx:id="close" fitHeight="12.0" fitWidth="12.0" layoutX="18.0" layoutY="14.0" onMouseEntered="#showButtons" preserveRatio="true">
+         <image>
+            <Image url="@../resources/Close.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="minimize" fitHeight="12.0" fitWidth="12.0" layoutX="38.0" layoutY="14.0" onMouseEntered="#showButtons" preserveRatio="true">
+         <image>
+            <Image url="@../resources/Minimize.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="12.0" fitWidth="12.0" layoutX="58.0" layoutY="14.0" preserveRatio="true">
+         <image>
+            <Image url="@../resources/Expand.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="closed" fitHeight="12.0" fitWidth="12.0" layoutX="18.0" layoutY="14.0" onMouseClicked="#close" onMouseExited="#hideButtons" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../resources/Closed.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="minimized" fitHeight="12.0" fitWidth="12.0" layoutX="38.0" layoutY="14.0" onMouseClicked="#minimize" onMouseExited="#hideButtons" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../resources/Minimized.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="35.0" layoutY="30.0" text="Add Course" textFill="WHITE">
+         <font>
+            <Font name="SF Pro Display Semibold" size="43.0" />
+         </font>
+      </Label>
+      <Pane layoutX="35.0" layoutY="96.0" prefHeight="260.0" prefWidth="350.0" style="-fx-background-color: #262626; -fx-background-radius: 10;">
+         <children>
+            <Label fx:id="lectureCode" alignment="CENTER" layoutX="100.0" layoutY="5.0" minWidth="150.0" prefHeight="29.0" text="Course" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Semibold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="103.0" minWidth="101.0" prefHeight="21.0" text="Section" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Medium" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="77.0" prefHeight="21.0" text="Instructor" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Medium" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="51.0" prefHeight="21.0" text="Course Name" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Medium" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="courseName" layoutX="121.0" layoutY="51.0" prefHeight="21.0" prefWidth="220.0" style="-fx-background-color: #262626;" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Regular" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="instructor" layoutX="121.0" layoutY="77.0" prefHeight="21.0" prefWidth="220.0" style="-fx-background-color: #262626;" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Regular" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="section2" layoutX="121.0" layoutY="103.0" prefHeight="21.0" prefWidth="220.0" style="-fx-background-color: #262626;" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Regular" size="13.0" />
+               </font>
+            </Label>
+            <JFXProgressBar layoutY="150.0" prefHeight="3.0" prefWidth="350.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="233.0" prefHeight="15.0" text="Sun" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Regular" size="10.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="233.0" prefHeight="15.0" text="Mon" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Regular" size="10.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="127.0" layoutY="233.0" prefHeight="15.0" text="Tue" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Regular" size="10.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="166.0" layoutY="233.0" prefHeight="15.0" text="Wed" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Regular" size="10.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="207.0" layoutY="233.0" prefHeight="15.0" text="Thu" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Regular" size="10.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="233.0" prefHeight="15.0" text="Fri" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Regular" size="10.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="289.0" layoutY="233.0" prefHeight="15.0" text="Sat" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="SF Pro Display Regular" size="10.0" />
+               </font>
+            </Label>
+            <HBox alignment="BOTTOM_CENTER" layoutX="25.0" layoutY="161.0" prefHeight="67.0" prefWidth="300.0" spacing="35.0">
+               <children>
+                  <Rectangle fx:id="sun" arcHeight="5.0" arcWidth="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="RED" />
+                              <Stop color="#ff7700" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Rectangle fx:id="mon" arcHeight="5.0" arcWidth="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="RED" />
+                              <Stop color="#ff7700" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Rectangle fx:id="tue" arcHeight="5.0" arcWidth="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="RED" />
+                              <Stop color="#ff7700" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Rectangle fx:id="wed" arcHeight="5.0" arcWidth="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="RED" />
+                              <Stop color="#ff7700" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Rectangle fx:id="thu" arcHeight="5.0" arcWidth="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="RED" />
+                              <Stop color="#ff7700" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Rectangle fx:id="fri" arcHeight="5.0" arcWidth="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="RED" />
+                              <Stop color="#ff7700" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Rectangle fx:id="sat" arcHeight="5.0" arcWidth="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="RED" />
+                              <Stop color="#ff7700" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Label layoutX="410.0" layoutY="118.0" text="Department" textFill="WHITE">
+         <font>
+            <Font name="SF Pro Display Regular" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="410.0" layoutY="160.0" text="Course Code" textFill="WHITE">
+         <font>
+            <Font name="SF Pro Display Regular" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="410.0" layoutY="203.0" text="Section" textFill="WHITE">
+         <font>
+            <Font name="SF Pro Display Regular" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="verified_dept" fitHeight="35.0" fitWidth="35.0" layoutX="650.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../resources/check.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="verified_course" fitHeight="35.0" fitWidth="35.0" layoutX="650.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../resources/check.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="verified_sec" fitHeight="35.0" fitWidth="35.0" layoutX="650.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../resources/check.png" />
+         </image>
+      </ImageView>
+      <AutocompletionlTextField fx:id="department" layoutX="540.0" layoutY="116.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 10;">
+         <font>
+            <Font name="SF Pro Text Regular" size="13.0" />
+         </font>
+      </AutocompletionlTextField>
+      <AutocompletionlTextField fx:id="courseCode" layoutX="540.0" layoutY="158.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 10;">
+         <font>
+            <Font name="SF Pro Text Regular" size="13.0" />
+         </font>
+      </AutocompletionlTextField>
+      <AutocompletionlTextField fx:id="section" layoutX="540.0" layoutY="201.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 10;">
+         <font>
+            <Font name="SF Pro Text Regular" size="13.0" />
+         </font>
+      </AutocompletionlTextField>
+      <JFXButton fx:id="clean" alignment="CENTER" focusTraversable="false" layoutX="570.0" layoutY="350.0" onAction="#clean" ripplerFill="#6d6d6d00" style="-fx-background-color: black; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-color: white;" text="Clear" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="SF Pro Display Regular" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="add" alignment="CENTER" disable="true" focusTraversable="false" layoutX="633.0" layoutY="350.0" onAction="#addCourse" ripplerFill="#6d6d6d00" style="-fx-background-color: black; -fx-border-radius: 100; -fx-background-radius: 100; -fx-border-color: white;" text="Enroll" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="SF Pro Display Regular" size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</Pane>

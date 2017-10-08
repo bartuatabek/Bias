@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SplashController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1400.0" pickOnBounds="true">
+         <image>
+            <Image url="@../resources/Profile_snapshot.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="splash" fitHeight="700.0" fitWidth="1400.0" opacity="0.0" preserveRatio="true">
+         <image>
+            <Image url="@../resources/Splash.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="getStarted" alignment="CENTER" layoutX="576.0" layoutY="590.0" onAction="#getStarted" opacity="0.0" prefHeight="48.0" prefWidth="248.0" ripplerFill="#007aff00" style="-fx-background-radius: 10;" text=" " textFill="WHITE" />
+   </children>
+</AnchorPane>
