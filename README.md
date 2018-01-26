@@ -25,13 +25,12 @@ application.initOpt();
 With Bias, you can easily stop worrying for your classes, wasting hours figuring out the right study combinations to use, and worrying about whether your notes will be readable.
 
 ## Table of Contents
-[● Features](https://github.com/ViccAlexander/Chameleon#-product-features)  
-[● Requirements](https://github.com/ViccAlexander/Chameleon#%EF%B8%8F-requirements)  
-[● License](https://github.com/ViccAlexander/Chameleon#-license)  
-[● Contributions](https://github.com/ViccAlexander/Chameleon#-contributions)   
-[● Documentation](https://github.com/ViccAlexander/Chameleon#-documentation)    
-[● Author](https://github.com/ViccAlexander/Chameleon#-author)     
-[● Change Log](https://github.com/ViccAlexander/Chameleon#-change-log)  
+[● Features](https://github.com/bartuatabek/Bias#features)  
+[● Requirements](https://github.com/bartuatabek/Biasrequirements)  
+[● License](https://github.com/bartuatabek/Bias#license)  
+[● Contributions](https://github.com/bartuatabek/Bias#contributions)   
+[● Documentation](https://github.com/bartuatabek/Bias#documentation)    
+[● Author](https://github.com/bartuatabek/Bias#author)     
 
 ## Features
 
