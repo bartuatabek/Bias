@@ -3,11 +3,11 @@
 </p>
 
 <p align="center">
-    <img src="	https://img.shields.io/pypi/status/Django.svg" alt="Status"/>
+    <img src="https://img.shields.io/pypi/status/Django.svg" alt="Status"/>
     <img src="https://img.shields.io/badge/version-2.0.1-blue.svg" alt="Version"/>
     <img src="https://img.shields.io/badge/platform-MacOS%2010.12%2B-orange.svg" alt="Platform: Mac OS 10.12+"/>
     <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/language-java%208-brightgreen.svg" alt="Language: Java 8" /></a>
-    <img src="	https://img.shields.io/crates/l/rustc-serialize.svg" alt="License: MIT" /> <br><br>
+    <img src="https://img.shields.io/crates/l/rustc-serialize.svg" alt="License: MIT" /> <br><br>
 </p>
 
 ## Java 9
