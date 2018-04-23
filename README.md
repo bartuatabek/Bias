@@ -4,19 +4,23 @@
 
 <p align="center">
     <img src="https://img.shields.io/pypi/status/Django.svg" alt="Status"/>
-    <img src="https://img.shields.io/badge/version-2.0.1-blue.svg" alt="Version"/>
+    <img src="https://img.shields.io/badge/version-2.5.0-blue.svg" alt="Version"/>
     <img src="https://img.shields.io/badge/platform-MacOS%2010.12%2B-orange.svg" alt="Platform: Mac OS 10.12+"/>
     <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/language-java%208-brightgreen.svg" alt="Language: Java 8" /></a>
     <img src="https://img.shields.io/crates/l/rustc-serialize.svg" alt="License: MIT" /> <br><br>
 </p>
 
-## Java 9
+## Update 2.5 Release notes
 
-To use the Java 9 version, download the installer tagged "Java 9"  (until 2.1 or higher is released):
-```java
-application.setVersion("Java9");
-application.initOpt();
-```
+* Updated for Java 9 & 10 support
+* Delete your account permanently
+* Self Removing Course data now fixed
+* Bug fixes
+* Improves overall stabilty
+
+## Java 9 & 10
+
+Bias is now optimized for Java 9 & 10. Support for Java 7 or below may be removed in future releases.
 
 ## Introduction
 
@@ -100,7 +104,7 @@ As you start to plan what courses to take from which instructors Bias can help y
 ## Requirements
 
 * MacOS 10.12+ or Windows 8+
-* Requires Java 7+ for use in any Java Project
+* Requires Java 8+ for use in any Java Project
 
 ## License
 Bias is released and distributed under the terms and conditions of the [Apache license](https://github.com/bartuatabek/Bias/blob/master/LICENSE.md).
