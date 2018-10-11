@@ -16,7 +16,7 @@
 * Delete your account permanently
 * Self Removing Course data now fixed
 * Bug fixes
-* Improves overall stabilty
+* Improves overall stability
 
 ## Java 9 & 10
 
@@ -117,5 +117,3 @@ All methods, properties, and types available in Bias are documented inside the d
 
 ## Author
 Bias was developed by **Bartu Atabek** and **Musab Gelişgen** in 2017 using Java. Currently, it is being maintained by both [@BartuAtabek](https://github.com/bartuatabek) and [@MusabGelisgen](https://github.com/musabgelisgen).
-
-    
